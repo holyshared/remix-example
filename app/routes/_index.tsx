@@ -42,6 +42,15 @@ export default function Index() {
             Remix Docs
           </a>
         </li>
+        <li>
+          <a
+            className="text-blue-700 underline visited:text-purple-900"
+            href="/posts"
+            rel="noreferrer"
+          >
+            Posts
+          </a>
+        </li>
       </ul>
     </div>
   );
