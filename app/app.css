@@ -1,0 +1,7 @@
+.selectFile {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+.hidden {
+  display: none;
+}
