@@ -2,6 +2,13 @@ import type { MetaFunction } from "@remix-run/node";
 import { ChangeEvent, useRef, useState } from "react";
 import loadImage from "blueimp-load-image";
 
+import { clientOnly$ } from "vite-env-only/macros"
+import { pending } from "~/.client/api-client"
+
+const reservePost = clientOnly$(async () => {
+  return pending()
+})
+
 export const meta: MetaFunction = () => {
   return [
     { title: "New Post" },
@@ -92,7 +99,14 @@ export default function NewPost() {
 
   const onCropClick = () => {
     crop(image!.file, image!.crop).then(() => {
-      alert("croped");
+      alert("crop clicked");
+      if (!reservePost){
+        return
+      }
+      reservePost().then((res) => {
+        console.info(res)
+        alert("croped");
+      })
     })
   }
 

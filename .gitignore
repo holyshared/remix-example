@@ -1,6 +1,7 @@
 node_modules
-packages/*/node_modules
+packages/**/node_modules
 
-packages/*/.cache
-packages/*/build
-packages/*/.env
+packages/**/.cache
+packages/**/build
+packages/**/dist
+packages/**/.env
